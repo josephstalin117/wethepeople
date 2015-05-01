@@ -1,29 +1,63 @@
 <?php
-/* @var $this yii\web\View */
+
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\captcha\Captcha;
+use yii\grid\GridView;
 
+/* @var $this yii\web\View */
+/* @var $searchModel frontend\models\SuggestionSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = Yii::t('app', 'Suggestions');
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<h1>suggestion/index</h1>
+<div class="suggestion-index">
 
-<div class="site-contact">
     <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+        <?= Html::a(Yii::t('app', 'Create Suggestion'), ['add'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
-            <?= $form->field($model, 'title') ?>
-            <?= $form->field($model, 'content')->textArea(['rows' => 6]) ?>
-            <div class="form-group">
-                <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-            </div>
-            <?php ActiveForm::end(); ?>
-        </div>
-    </div>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+//            'id',
+            'title',
+            'content:ntext',
+            'submitter',
+//            'status',
+            // 'up',
+            // 'down',
+            // 'part:ntext',
+            // 'created_at',
+            [
+                'attribute' => 'created_at',
+                'format' => 'date',
+            ],
+            // 'updated_at',
+
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{new_action1}{new_action2}',
+                'buttons' => [
+                    'new_action1' => function ($url, $model) {
+                        return Html::a('<span class="btn btn-success">查看</span>', $url, [
+                            'title' => Yii::t('app', 'New Action1'),
+                        ]);
+                    }
+                ],
+                'urlCreator' => function ($action, $model) {
+                    if ($action === 'new_action1') {
+                        $url = '?r=suggestion/view&id=' . $model->id;
+                        return $url;
+                    }
+                }
+            ],
+        ],
+    ]);
+    ?>
 
 </div>
