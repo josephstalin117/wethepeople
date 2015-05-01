@@ -6,6 +6,8 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Suggestion;
+use yii\behaviors\TimestampBehavior;
+
 
 /**
  * SuggestionSearche represents the model behind the search form about `common\models\Suggestion`.
@@ -41,7 +43,7 @@ class SuggestionSearche extends Suggestion
      */
     public function search($params)
     {
-        $query = Suggestion::find();
+        $query = Suggestion::find()->orderBy('created_at DESC');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
