@@ -23,10 +23,11 @@ class m130524_201442_init extends Migration
             'password_reset_token' => Schema::TYPE_STRING,
             'email' => Schema::TYPE_STRING . ' NOT NULL',
             'role' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 1',
+            'realname' => Schema::TYPE_STRING,
 
             'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 1',
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'updated_at' => Schema::TYPE_INTEGER,
         ], $tableOptions);
 
         //stu_info
@@ -56,7 +57,7 @@ class m130524_201442_init extends Migration
             'part' => Schema::TYPE_TEXT,
 
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'updated_at' => Schema::TYPE_INTEGER,
         ], $tableOptions);
 
         $this->createTable('{{%sugges_detail}}', [
