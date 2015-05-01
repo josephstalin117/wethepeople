@@ -88,27 +88,29 @@ class m130524_201442_init extends Migration
 
         $this->createTable('{{%sugges_detail}}', [
             'id' => Schema::TYPE_PK,
-            'sugg_id' => Schema::TYPE_INTEGER,
-            'part_id' => Schema::TYPE_INTEGER,
-            'attitude' => Schema::TYPE_INTEGER,
+            'sugg_id' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'part_id' => Schema::TYPE_TEXT,
+            'attitude' => Schema::TYPE_INTEGER . ' NOT NULL DEFAULT 0',
         ], $tableOptions);
 
         $this->createTable('{{%comment}}', [
             'id' => Schema::TYPE_PK,
-            'sugg_id' => Schema::TYPE_INTEGER,
-            'part_id' => Schema::TYPE_INTEGER,
+            'sugg_id' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'part_id' => Schema::TYPE_TEXT,
             'content' => Schema::TYPE_TEXT,
-            'time' => Schema::TYPE_INTEGER,
+
+            'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);
 
-        $this->createTable('{{%message}}',[
-            'id'=>Schema::TYPE_PK,
-            'send_id'=>Schema::TYPE_INTEGER,
-            'recive_id'=>Schema::TYPE_INTEGER,
-            'un_read'=>Schema::TYPE_INTEGER,
-            'content'=>Schema::TYPE_TEXT,
-            'time'=>Schema::TYPE_INTEGER,
-        ],$tableOptions);
+        $this->createTable('{{%message}}', [
+            'id' => Schema::TYPE_PK,
+            'send_id' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'recive_id' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'un_read' => Schema::TYPE_INTEGER . ' NOT NULL DEFAULT 0',
+            'content' => Schema::TYPE_TEXT,
+
+            'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
+        ], $tableOptions);
 
     }
 
@@ -118,8 +120,9 @@ class m130524_201442_init extends Migration
         $this->dropTable('{{%stu_info}}');
         $this->dropTable('{{%tea_info}}');
         $this->dropTable('{{%suggestion}}');
-        $this->dropTable('{{%suggestion}}');
-        $this->dropTable('{{%suggestion}}');
+        $this->dropTable('{{%sugges_detail}}');
+        $this->dropTable('{{%comment}}');
+        $this->dropTable('{{%message}}');
     }
 
 }
