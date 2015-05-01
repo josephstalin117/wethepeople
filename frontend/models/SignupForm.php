@@ -50,6 +50,8 @@ class SignupForm extends Model
             $user->generateAuthKey();
             if ($user->save()) {
                 return $user;
+            } else {
+                error_log(print_r($user->errors, true));
             }
         }
 
