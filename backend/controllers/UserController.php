@@ -102,10 +102,17 @@ class UserController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $model=$this->findModel($id);
+        if (Yii::$app->request->post()) {
+            $model->username = Yii::$app->request->post('User')['username'];
+            $model->realname = Yii::$app->request->post('User')['realname'];
+            $model->email = Yii::$app->request->post('User')['email'];
+            $model->setPassword(Yii::$app->request->post('User')['password_hash']);
+            if ($model->update()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                error_log(print_r($model->errors, true));
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,
