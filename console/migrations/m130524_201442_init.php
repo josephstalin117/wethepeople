@@ -30,20 +30,6 @@ class m130524_201442_init extends Migration
             'updated_at' => Schema::TYPE_INTEGER,
         ], $tableOptions);
 
-        //stu_info
-        $this->createTable('{{%stu_info}}', [
-            'id' => Schema::TYPE_PK,
-            'user_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'real_name' => Schema::TYPE_STRING . ' NOT NULL',
-        ], $tableOptions);
-
-        //tea_info
-        $this->createTable('{{%tea_info}}', [
-            'id' => Schema::TYPE_PK,
-            'user_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'real_name' => Schema::TYPE_STRING . ' NOT NULL',
-        ], $tableOptions);
-
         //suggestion
         $this->createTable('{{%suggestion}}', [
             'id' => Schema::TYPE_PK,
@@ -91,8 +77,6 @@ class m130524_201442_init extends Migration
     public function safeDown()
     {
         $this->dropTable('{{%user}}');
-        $this->dropTable('{{%stu_info}}');
-        $this->dropTable('{{%tea_info}}');
         $this->dropTable('{{%suggestion}}');
         $this->dropTable('{{%sugges_detail}}');
         $this->dropTable('{{%comment}}');
