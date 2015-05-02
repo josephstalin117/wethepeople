@@ -77,6 +77,7 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
+    //@todo
     public function fields()
     {
         return [
