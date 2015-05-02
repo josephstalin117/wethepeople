@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use common\models\Posts;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -77,7 +78,8 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
     }
+
+
 }
