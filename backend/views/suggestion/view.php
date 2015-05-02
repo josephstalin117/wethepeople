@@ -32,7 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'content:ntext',
-            'submitter',
+            [
+                'label' => '提交人',
+                'value' => $model->user->realname,
+            ],
             'status',
             'up',
             'down',

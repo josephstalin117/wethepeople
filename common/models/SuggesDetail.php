@@ -46,4 +46,9 @@ class SuggesDetail extends \yii\db\ActiveRecord
             'attitude' => Yii::t('app', '态度'),
         ];
     }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'part_id']);
+    }
 }
