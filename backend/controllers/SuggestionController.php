@@ -5,9 +5,12 @@ namespace backend\controllers;
 use Yii;
 use common\models\Suggestion;
 use backend\models\SuggestionSearche;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use common\models\SuggesDetail;
 
 /**
  * SuggestionController implements the CRUD actions for Suggestion model.
@@ -17,6 +20,16 @@ class SuggestionController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['view', 'create', 'update', 'delete', 'index', 'logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -48,8 +61,15 @@ class SuggestionController extends Controller
      */
     public function actionView($id)
     {
+        $suggesDetailProvider = new ActiveDataProvider([
+            'query' => SuggesDetail::find()->where(['sugg_id' => $id]),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'suggesDetailProvider' => $suggesDetailProvider,
         ]);
     }
 

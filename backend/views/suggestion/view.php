@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\widgets\ListView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Suggestion */
@@ -15,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
+        <?= Html::a(Yii::t('app', '更新'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', '删除'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
@@ -36,9 +37,30 @@ $this->params['breadcrumbs'][] = $this->title;
             'up',
             'down',
             'part:ntext',
-            'created_at',
-            'updated_at',
+            [
+                'attribute' => 'created_at',
+                'format' => 'date',
+            ],
         ],
     ]) ?>
 
+</div>
+<div class="section-student dd-listview-table">
+    <table class="table table-hover items-students">
+        <thead>
+        <tr>
+            <th><?= Yii::t('app', '表态学生'); ?></th>
+            <th><?= Yii::t('app', '态度'); ?></th>
+            <th></th>
+        </tr>
+        </thead>
+        <?php $listview = ListView::begin([
+            'dataProvider' => $suggesDetailProvider,
+            'itemView' => '_suggesDetail',
+            'layout' => '{items}'
+        ]); ?>
+        <?php ListView::end(); ?>
+    </table>
+    <!-- 分页 -->
+    <?= $listview->renderPager(); ?>
 </div>

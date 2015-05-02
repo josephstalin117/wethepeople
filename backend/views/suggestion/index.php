@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\SuggestionSearche */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Suggestions');
+$this->title = Yii::t('app', '管理提议');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="suggestion-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Suggestion'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', '创建一个提议'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -28,12 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
             'title',
             'content:ntext',
-            'submitter',
+//            'submitter',
             'status',
-            // 'up',
-            // 'down',
+             'up',
+             'down',
             // 'part:ntext',
-            // 'created_at',
+//             'created_at',
             // 'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],

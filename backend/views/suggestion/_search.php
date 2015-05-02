@@ -25,9 +25,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status') ?>
 
-    <?php // echo $form->field($model, 'up') ?>
+    <?php  echo $form->field($model, 'up') ?>
 
-    <?php // echo $form->field($model, 'down') ?>
+    <?php  echo $form->field($model, 'down') ?>
 
     <?php // echo $form->field($model, 'part') ?>
 
