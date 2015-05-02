@@ -30,7 +30,7 @@ class SuggesDetail extends \yii\db\ActiveRecord
         return [
             [['sugg_id'], 'required'],
             [['sugg_id', 'attitude'], 'integer'],
-            [['part_id'], 'string']
+            [['part_id'], 'integer']
         ];
     }
 
