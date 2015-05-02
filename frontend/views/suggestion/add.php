@@ -5,13 +5,13 @@ use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
 ?>
-<h1>suggestion/index</h1>
+<h1>提议</h1>
 
 <div class="site-contact">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+        分享您的建议，并与大家共同讨论吧。
     </p>
 
     <div class="row">

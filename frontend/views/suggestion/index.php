@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\models\SuggestionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Suggestions');
+$this->title = Yii::t('app', '提议');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="suggestion-index">
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
             'title',
             'content:ntext',
-            'submitter',
+//            'submitter',
 //            'status',
             // 'up',
             // 'down',
