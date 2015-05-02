@@ -34,6 +34,8 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => '主页', 'url' => ['/site/index']],
+                ['label' => '提议', 'url' => ['/suggestion/index']],
+                ['label' => '公告', 'url' => ['/site/post']],
                 ['label' => '关于', 'url' => ['/site/about']],
                 ['label' => '联系我们', 'url' => ['/site/contact']],
             ];

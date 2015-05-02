@@ -33,6 +33,7 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => '主页', 'url' => ['/site/index']],
+                ['label' => '管理公告', 'url' => ['/post/index']],
                 ['label' => '用户管理', 'url' => ['/user/index']],
                 ['label' => '提议管理', 'url' => ['/suggestion/index']],
             ];

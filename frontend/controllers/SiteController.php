@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Posts;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -12,6 +13,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\data\ActiveDataProvider;
 
 /**
  * Site controller
@@ -166,6 +168,20 @@ class SiteController extends Controller
 
         return $this->render('resetPassword', [
             'model' => $model,
+        ]);
+    }
+
+    public function actionPost()
+    {
+        $provider = new ActiveDataProvider([
+            'query' => Posts::find()->orderBy('created_at DESC'),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+        ]);
+
+        return $this->render('post', [
+            'dataProvider' => $provider,
         ]);
     }
 }
