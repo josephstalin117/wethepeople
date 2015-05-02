@@ -67,15 +67,15 @@ class Suggestion extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Title'),
-            'content' => Yii::t('app', 'Content'),
-            'submitter' => Yii::t('app', 'Submitter'),
-            'status' => Yii::t('app', 'Status'),
-            'up' => Yii::t('app', 'Up'),
-            'down' => Yii::t('app', 'Down'),
-            'part' => Yii::t('app', 'Part'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
+            'title' => Yii::t('app', '标题'),
+            'content' => Yii::t('app', '内容'),
+            'submitter' => Yii::t('app', '提交人'),
+            'status' => Yii::t('app', '提议状态'),
+            'up' => Yii::t('app', '赞同数'),
+            'down' => Yii::t('app', '反对数'),
+            'part' => Yii::t('app', '参与者'),
+            'created_at' => Yii::t('app', '创建时间'),
+            'updated_at' => Yii::t('app', '修改时间'),
         ];
     }
 }

@@ -17,6 +17,7 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property integer $role
+ * @property integer $realname
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
@@ -55,6 +56,24 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'default', 'value' => self::ROLE_STUDENT],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => Yii::t('app', 'ID'),
+            'username' => Yii::t('app', '用户名'),
+            'password_hash' => Yii::t('app', '密码hash'),
+            'email' => Yii::t('app', 'email'),
+            'status' => Yii::t('app', '状态'),
+            'realname' => Yii::t('app', '真实姓名'),
+            'role' => Yii::t('app', '角色'),
+            'created_at' => Yii::t('app', '创建时间'),
+            'updated_at' => Yii::t('app', '修改时间'),
         ];
     }
 

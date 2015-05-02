@@ -41,9 +41,9 @@ class SuggesDetail extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'sugg_id' => Yii::t('app', 'Sugg ID'),
-            'part_id' => Yii::t('app', 'Part ID'),
-            'attitude' => Yii::t('app', 'Attitude'),
+            'sugg_id' => Yii::t('app', '提议ID'),
+            'part_id' => Yii::t('app', '参与者ID'),
+            'attitude' => Yii::t('app', '态度'),
         ];
     }
 }
