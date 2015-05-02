@@ -63,7 +63,7 @@ class m130524_201442_init extends Migration
         $this->createTable('{{%sugges_detail}}', [
             'id' => Schema::TYPE_PK,
             'sugg_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'part_id' => Schema::TYPE_TEXT,
+            'part_id' => Schema::TYPE_INTEGER,
             'attitude' => Schema::TYPE_INTEGER . ' NOT NULL DEFAULT 0',
         ], $tableOptions);
 
