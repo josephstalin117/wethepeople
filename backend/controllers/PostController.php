@@ -78,7 +78,6 @@ class PostController extends Controller
             $model->title=Yii::$app->request->post('Posts')['title'];
             $model->content=Yii::$app->request->post('Posts')['content'];
             if ($model->save()) {
-                Yii::$app->session->setFlash('error', '发布成功');
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
