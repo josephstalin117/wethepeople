@@ -9,7 +9,7 @@ $this->title = 'My Yii Application';
 
         <p class="lead">Giving all Students a way to engage their teacher on the issues that matter to them.</p>
 
-        <p><a class="btn btn-lg btn-success" href="/index.php?r=suggestion">Get started!!!</a></p>
+        <p><a class="btn btn-lg btn-success" href="/suggestion/index">Get started!!!</a></p>
     </div>
 
     <div class="body-content">

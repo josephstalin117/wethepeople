@@ -1,5 +1,6 @@
 <?php
 /* @var $this yii\web\View */
+use yii\helpers\Html;
 
 $this->title = 'My Yii Application';
 ?>
@@ -10,9 +11,11 @@ $this->title = 'My Yii Application';
 
         <p class="lead">通过提议平台能够更好地认识学生</p>
 
-        <p><a class="btn btn-lg btn-success" href="admin/post/index">管理提议</a></p>
-        <p><a class="btn btn-lg btn-success" href="admin/user/index">管理用户</a></p>
-        <p><a class="btn btn-lg btn-success" href="admin/suggestion/index">管理公告</a></p>
+        <p><?= Html::a('管理提议', ['post/index'], ['class' => 'btn btn-lg btn-success']) ?></p>
+
+        <p><?= Html::a('管理用户', ['user/index'], ['class' => 'btn btn-lg btn-success']) ?></p>
+
+        <p><?= Html::a('管理提议', ['suggestion/index'], ['class' => 'btn btn-lg btn-success']) ?></p>
     </div>
 
 </div>

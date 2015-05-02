@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'urlCreator' => function ($action, $model) {
                     if ($action === 'new_action1') {
-                        $url = '?r=suggestion/view&id=' . $model->id;
+                        $url = '/suggestion/view?id=' . $model->id;
                         return $url;
                     }
                 }
