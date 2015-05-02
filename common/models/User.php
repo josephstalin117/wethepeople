@@ -77,6 +77,24 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
+    public function fields()
+    {
+        return [
+
+            'email' => 'email_address',
+
+            'role' => function () {
+                if ($this->role == 1) {
+                    return "学生";
+                } elseif ($this->role == 10) {
+                    return "管理员";
+                } else {
+                    return "教师";
+                }
+            },
+        ];
+    }
+
     /**
      * @inheritdoc
      */

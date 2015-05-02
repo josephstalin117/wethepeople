@@ -98,15 +98,17 @@ class UserController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model=$this->findModel($id);
+        $model = $this->findModel($id);
         if (Yii::$app->request->post()) {
             $model->username = Yii::$app->request->post('User')['username'];
             $model->realname = Yii::$app->request->post('User')['realname'];
             $model->email = Yii::$app->request->post('User')['email'];
             $model->setPassword(Yii::$app->request->post('User')['password_hash']);
             if ($model->update()) {
+                Yii::$app->session->setFlash('success', '更新成功');
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
+                Yii::$app->session->setFlash('error', '更新失败');
                 error_log(print_r($model->errors, true));
             }
         } else {
@@ -125,7 +127,7 @@ class UserController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        Yii::$app->session->setFlash('success', '删除成功');
         return $this->redirect(['index']);
     }
 

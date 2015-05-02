@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
+        <?= Html::a(Yii::t('app', '修改'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', '删除'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'confirm' => Yii::t('app', '你希望删除这个用户吗？'),
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,15 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'username',
-            'auth_key',
+//            'auth_key',
             'password_hash',
-            'password_reset_token',
+//            'password_reset_token',
             'email:email',
             'role',
             'realname',
-            'status',
-            'created_at',
-            'updated_at',
+//            'status',
+            [
+                'attribute' => 'created_at',
+                'format' => 'date',
+            ],
+//            'updated_at',
         ],
     ]) ?>
 
