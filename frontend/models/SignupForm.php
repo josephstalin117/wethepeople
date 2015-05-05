@@ -24,7 +24,8 @@ class SignupForm extends Model
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => '这个用户名已经存在'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
+//            ['username', 'string', 'min' => 2, 'max' => 255],
+            ['username', 'integer'],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
