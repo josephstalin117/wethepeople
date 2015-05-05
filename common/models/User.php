@@ -28,6 +28,7 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
     const ROLE_STUDENT = 1;
+    const ROLE_ADMIN = 10;
 
     /**
      * @inheritdoc
@@ -57,9 +58,11 @@ class User extends ActiveRecord implements IdentityInterface
             ['email', 'email'],
             ['realname', 'string', 'min' => 2, 'max' => 255],
 
-            ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'default', 'value' => self::ROLE_STUDENT],
+            ['status', 'default', 'value' => self::STATUS_DELETED],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+
+            ['role', 'default', 'value' => self::ROLE_STUDENT],
+            ['role', 'in', 'range' => [self::ROLE_ADMIN, self::ROLE_ADMIN]],
         ];
     }
 
