@@ -81,10 +81,41 @@ class User extends ActiveRecord implements IdentityInterface
             'role' => Yii::t('app', '角色'),
             'created_at' => Yii::t('app', '创建时间'),
             'updated_at' => Yii::t('app', '修改时间'),
+            'roleLabel' => Yii::t('app', '用户角色'),
+            'statusLabel' => Yii::t('app', '用户激活状态'),
         ];
     }
 
     //@todo 增加用户属性汉化
+
+    public function statusLabels()
+    {
+        return [
+            self::STATUS_DELETED => Yii::t('app', '未激活'),
+            self::STATUS_ACTIVE => Yii::t('app', '激活'),
+        ];
+    }
+
+    public function roleLabels()
+    {
+        return [
+            self::ROLE_STUDENT => Yii::t('app', '学生'),
+            self::ROLE_ADMIN => Yii::t('app', '管理员'),
+        ];
+    }
+
+    public function getStatusLabel()
+    {
+        return $this->statusLabels()[$this->status];
+    }
+
+    public function getRoleLabel()
+    {
+        return $this->roleLabels()[$this->role];
+    }
+
+    //$model->sexLabel
+
 
     /**
      * @inheritdoc
