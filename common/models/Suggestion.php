@@ -83,7 +83,21 @@ class Suggestion extends \yii\db\ActiveRecord
             'part' => Yii::t('app', '参与者'),
             'created_at' => Yii::t('app', '创建时间'),
             'updated_at' => Yii::t('app', '修改时间'),
+            'statusLabel' => Yii::t('app', '提议状态'),
         ];
+    }
+
+    public function statusLabels()
+    {
+        return [
+            self::STATUS_INACTIVE => Yii::t('app', '未激活'),
+            self::STATUS_ACTIVE => Yii::t('app', '激活'),
+        ];
+    }
+
+    public function getStatusLabel()
+    {
+        return $this->statusLabels()[$this->status];
     }
 
     public function getUser()

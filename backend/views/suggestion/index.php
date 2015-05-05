@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'content:ntext',
 //            'submitter',
-            'status',
+            'statusLabel',
              'up',
              'down',
             // 'part:ntext',
