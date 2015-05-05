@@ -13,6 +13,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $realname;
 
     /**
      * @inheritdoc
@@ -22,16 +23,19 @@ class SignupForm extends Model
         return [
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
+            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => '这个用户名已经存在'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => '这个邮箱已经存在'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+
+            ['realname', 'required'],
+            ['realname', 'string', 'min' => 2, 'max' => 255],
         ];
     }
 
@@ -46,6 +50,7 @@ class SignupForm extends Model
             $user = new User();
             $user->username = $this->username;
             $user->email = $this->email;
+            $user->realname = $this->realname;
             $user->setPassword($this->password);
             $user->generateAuthKey();
             if ($user->save()) {

@@ -53,6 +53,10 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
+            ['username', 'string', 'min' => 2, 'max' => 255],
+            ['email', 'email'],
+            ['realname', 'string', 'min' => 2, 'max' => 255],
+
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'default', 'value' => self::ROLE_STUDENT],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
@@ -74,25 +78,6 @@ class User extends ActiveRecord implements IdentityInterface
             'role' => Yii::t('app', '角色'),
             'created_at' => Yii::t('app', '创建时间'),
             'updated_at' => Yii::t('app', '修改时间'),
-        ];
-    }
-
-    //@todo
-    public function fields()
-    {
-        return [
-
-            'email' => 'email_address',
-
-            'role' => function () {
-                if ($this->role == 1) {
-                    return "学生";
-                } elseif ($this->role == 10) {
-                    return "管理员";
-                } else {
-                    return "教师";
-                }
-            },
         ];
     }
 
