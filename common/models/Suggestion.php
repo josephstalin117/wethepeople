@@ -23,6 +23,9 @@ use common\models\User;
  */
 class Suggestion extends \yii\db\ActiveRecord
 {
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+
     /**
      * @inheritdoc
      */
@@ -57,7 +60,10 @@ class Suggestion extends \yii\db\ActiveRecord
             [['title', 'content', 'submitter'], 'required'],
             [['content', 'part'], 'string'],
             [['submitter', 'status', 'up', 'down'], 'integer'],
-            [['title'], 'string', 'max' => 255]
+            [['title'], 'string', 'max' => 255],
+
+            ['status', 'default', 'value' => self::STATUS_INACTIVE],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE]],
         ];
     }
 

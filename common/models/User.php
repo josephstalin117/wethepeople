@@ -62,7 +62,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
 
             ['role', 'default', 'value' => self::ROLE_STUDENT],
-            ['role', 'in', 'range' => [self::ROLE_ADMIN, self::ROLE_ADMIN]],
+            ['role', 'in', 'range' => [self::ROLE_STUDENT, self::ROLE_ADMIN]],
         ];
     }
 
@@ -74,7 +74,7 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             'id' => Yii::t('app', 'ID'),
             'username' => Yii::t('app', '用户名'),
-            'password_hash' => Yii::t('app', '密码hash'),
+            'password_hash' => Yii::t('app', '密码'),
             'email' => Yii::t('app', 'email'),
             'status' => Yii::t('app', '状态'),
             'realname' => Yii::t('app', '真实姓名'),
@@ -83,6 +83,8 @@ class User extends ActiveRecord implements IdentityInterface
             'updated_at' => Yii::t('app', '修改时间'),
         ];
     }
+
+    //@todo 增加用户属性汉化
 
     /**
      * @inheritdoc

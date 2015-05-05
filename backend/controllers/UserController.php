@@ -80,8 +80,10 @@ class UserController extends Controller
             $model->setPassword(Yii::$app->request->post('User')['password_hash']);
             $model->generateAuthKey();
             if ($model->save()) {
+                Yii::$app->session->setFlash('success', '创建成功');
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
+                Yii::$app->session->setFlash('error', '创建失败');
                 error_log(print_r($model->errors, true));
             }
         }
@@ -99,11 +101,7 @@ class UserController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        if (Yii::$app->request->post()) {
-            $model->username = Yii::$app->request->post('User')['username'];
-            $model->realname = Yii::$app->request->post('User')['realname'];
-            $model->email = Yii::$app->request->post('User')['email'];
-            $model->setPassword(Yii::$app->request->post('User')['password_hash']);
+        if ($model->load(Yii::$app->request->post())) {
             if ($model->update()) {
                 Yii::$app->session->setFlash('success', '更新成功');
                 return $this->redirect(['view', 'id' => $model->id]);
