@@ -20,9 +20,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $form->field($model, 'password_hash')->textInput() ?>
     <?= $form->field($model, 'realname')->textInput() ?>
     <?//@todo 修改text为listbox?>
-    <?= $form->field($model, 'role')->textInput() ?>
+<!--    --><?//= $form->field($model, 'role')->textInput() ?>
     <?= $form->field($model, 'email')->textInput() ?>
-    <?= $form->field($model, 'status')->textInput() ?>
+<!--    --><?//= $form->field($model, 'status')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

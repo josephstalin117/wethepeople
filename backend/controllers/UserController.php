@@ -22,7 +22,7 @@ class UserController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete','activate'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -129,6 +129,17 @@ class UserController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionActivate($id){
+        $model=$this->findModel($id);
+        $model->status==10?$model->status=0:$model->status=10;
+        if($model->update()){
+            Yii::$app->getSession()->setFlash('success','账户激活成功');
+            return $this->redirect(['view', 'id' => $model->id]);
+        }else{
+            Yii::$app->getSession()->setFlash('error','账户已处于未激活状态');
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+    }
     /**
      * Finds the User model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
