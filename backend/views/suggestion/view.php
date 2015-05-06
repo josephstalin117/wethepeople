@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'status',
             'up',
             'down',
-            'part:ntext',
+//            'part:ntext',
             [
                 'attribute' => 'created_at',
                 'format' => 'date',
