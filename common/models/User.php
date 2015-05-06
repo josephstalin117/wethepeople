@@ -86,8 +86,6 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
-    //@todo 增加用户属性汉化
-
     public function statusLabels()
     {
         return [
