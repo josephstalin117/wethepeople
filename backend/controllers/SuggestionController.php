@@ -24,7 +24,7 @@ class SuggestionController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['view', 'create', 'update', 'delete', 'index', 'logout'],
+                        'actions' => ['view', 'create', 'update', 'delete', 'index', 'logout','activate'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -97,6 +97,18 @@ class SuggestionController extends Controller
             return $this->render('create', [
                 'model' => $model,
             ]);
+        }
+    }
+
+    public function actionActivate($id){
+        $model=$this->findModel($id);
+        $model->status==1?$model->status=0:$model->status=1;
+        if($model->update()){
+            Yii::$app->getSession()->setFlash('success','发布成功');
+            return $this->redirect(['view', 'id' => $model->id]);
+        }else{
+            Yii::$app->getSession()->setFlash('error','已取消发布');
+            return $this->redirect(['view', 'id' => $model->id]);
         }
     }
 
