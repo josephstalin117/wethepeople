@@ -14,6 +14,9 @@ use Yii;
  */
 class SuggesDetail extends \yii\db\ActiveRecord
 {
+    const ATTITUDE_UP = 1;
+    const ATTITUDE_DOWN = 0;
+
     /**
      * @inheritdoc
      */
@@ -45,6 +48,19 @@ class SuggesDetail extends \yii\db\ActiveRecord
             'part_id' => Yii::t('app', '参与者ID'),
             'attitude' => Yii::t('app', '态度'),
         ];
+    }
+
+    public function statusLabels()
+    {
+        return [
+            self::ATTITUDE_UP => Yii::t('app', '赞同'),
+            self::ATTITUDE_DOWN => Yii::t('app', '反对'),
+        ];
+    }
+
+    public function getStatusLabel()
+    {
+        return $this->statusLabels()[$this->status];
     }
 
     public function getUser()
