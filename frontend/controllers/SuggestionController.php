@@ -135,8 +135,7 @@ class SuggestionController extends Controller
                 $suggesDetail = new SuggesDetail();
                 $suggesDetail->sugg_id = $id;
                 $suggesDetail->part_id = Yii::$app->user->id;
-                //@todo 永远为1
-                $suggesDetail->attributes = $attitude == "up" ? 1 : 0;
+                $suggesDetail->attitude = $attitude === "up" ? 1 : 0;
                 if($suggesDetail->save()){
                     Yii::$app->session->setFlash('success', '提交成功');
                     return $this->redirect(['view', 'id' => $model->id]);
