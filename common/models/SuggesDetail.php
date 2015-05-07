@@ -53,7 +53,7 @@ class SuggesDetail extends \yii\db\ActiveRecord
         ];
     }
 
-    public function statusLabels()
+    public function attitudeLabels()
     {
         return [
             self::ATTITUDE_UP => Yii::t('app', '赞同'),
@@ -61,9 +61,9 @@ class SuggesDetail extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getStatusLabel()
+    public function getAttitudeLabel()
     {
-        return $this->statusLabels()[$this->status];
+        return $this->attitudeLabels()[$this->attitude];
     }
 
     public function getUser()
