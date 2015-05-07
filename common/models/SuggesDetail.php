@@ -33,7 +33,10 @@ class SuggesDetail extends \yii\db\ActiveRecord
         return [
             [['sugg_id'], 'required'],
             [['sugg_id', 'attitude'], 'integer'],
-            [['part_id'], 'integer']
+            [['part_id'], 'integer'],
+
+            ['attitude', 'default', 'value' => self::ATTITUDE_DOWN],
+            ['attitude', 'in', 'range' => [self::ATTITUDE_UP, self::ATTITUDE_DOWN]],
         ];
     }
 
