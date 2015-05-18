@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => '学生提议平台',
+                'brandLabel' => '学生建议平台',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -67,8 +67,8 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; fengfeng <?= date('Y') ?></p>
-        <p class="pull-right">Powered By fengfeng</p>
+        <p class="pull-left">&copy; 山商信息之家 <?= date('Y') ?></p>
+        <p class="pull-right">Powered By 信息教研室</p>
         </div>
     </footer>
 

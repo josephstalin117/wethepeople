@@ -9,7 +9,7 @@ use yii\widgets\ListView;
 /* @var $model common\models\Suggestion */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Suggestions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '提议'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="suggestion-view">
@@ -17,12 +17,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Up'), ['up', 'id' => $model->id], ['class' => 'btn btn-primary',
+        <?= Html::a(Yii::t('app', '同意'), ['up', 'id' => $model->id], ['class' => 'btn btn-primary',
             'data' => [
                 'confirm' => Yii::t('app', '你确定要赞同此提议吗？'),
                 'method' => 'post',
             ],]) ?>
-        <?= Html::a(Yii::t('app', 'Down'), ['down', 'id' => $model->id], [
+        <?= Html::a(Yii::t('app', '反对'), ['down', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => Yii::t('app', '你确定要反对此提议吗？'),

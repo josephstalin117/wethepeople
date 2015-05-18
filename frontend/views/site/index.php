@@ -7,9 +7,7 @@ $this->title = 'My Yii Application';
     <div class="jumbotron">
         <h1>提议平台</h1>
 
-        <p class="lead">Giving all Students a way to engage their teacher on the issues that matter to them.</p>
-
-        <p><a class="btn btn-lg btn-success" href="/suggestion/index">Get started!!!</a></p>
+        <p><a class="btn btn-lg btn-success" href="/suggestion/index">欢迎使用</a></p>
     </div>
 
     <div class="body-content">
