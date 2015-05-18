@@ -40,6 +40,16 @@ class SignupForm extends Model
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('app', '学号'),
+            'password' => Yii::t('app', '密码'),
+            'realname' => Yii::t('app', '真实姓名'),
+            'email' => Yii::t('app', 'email'),
+        ];
+    }
+
     /**
      * Signs user up.
      *
