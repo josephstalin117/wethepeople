@@ -64,4 +64,9 @@ class Comment extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app', 'Created At'),
         ];
     }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'part_id']);
+    }
 }
