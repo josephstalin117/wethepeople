@@ -17,11 +17,13 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property integer $role
- * @property integer $realname
+ * @property string $realname
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ * @property string $face
+ * @property string $bio
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -54,15 +56,18 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            ['username', 'string', 'min' => 2, 'max' => 255],
+            ['username', 'integer'],
             ['email', 'email'],
             ['realname', 'string', 'min' => 2, 'max' => 255],
+            ['face', 'string'],
 
             ['status', 'default', 'value' => self::STATUS_DELETED],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
 
             ['role', 'default', 'value' => self::ROLE_STUDENT],
             ['role', 'in', 'range' => [self::ROLE_STUDENT, self::ROLE_ADMIN]],
+
+            [['face','bio'],'string'],
         ];
     }
 
@@ -83,6 +88,8 @@ class User extends ActiveRecord implements IdentityInterface
             'updated_at' => Yii::t('app', '修改时间'),
             'roleLabel' => Yii::t('app', '用户角色'),
             'statusLabel' => Yii::t('app', '用户激活状态'),
+            'face' => Yii::t('app', '头像'),
+            'bio' => Yii::t('app', '自我介绍'),
         ];
     }
 
@@ -107,13 +114,16 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->statusLabels()[$this->status];
     }
 
+    //$model->sexLabel
     public function getRoleLabel()
     {
         return $this->roleLabels()[$this->role];
     }
 
-    //$model->sexLabel
-
+    public function getImage()
+    {
+        return '@web/uploads/' . $this->face;
+    }
 
     /**
      * @inheritdoc
