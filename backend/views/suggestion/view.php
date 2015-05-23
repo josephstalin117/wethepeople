@@ -16,10 +16,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', '激活'), ['activate', 'id' => $model->id], [
+        <?= Html::a($model->status == 1 ? Yii::t('app', '取消激活') : Yii::t('app', '激活'), ['activate', 'id' => $model->id], [
             'class' => 'btn btn-success',
-            'date'=>[
-                'method'=>'post'
+            'date' => [
+                'method' => 'post'
             ]
         ]) ?>
         <?= Html::a(Yii::t('app', '更新'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
