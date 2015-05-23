@@ -104,10 +104,8 @@ class SuggestionController extends Controller
         $model=$this->findModel($id);
         $model->status==1?$model->status=0:$model->status=1;
         if($model->update()){
-            Yii::$app->getSession()->setFlash('success','发布成功');
             return $this->redirect(['view', 'id' => $model->id]);
         }else{
-            Yii::$app->getSession()->setFlash('error','已取消发布');
             return $this->redirect(['view', 'id' => $model->id]);
         }
     }
