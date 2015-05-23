@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
         <?= $form->field($comment, 'content')->textArea(['rows' => 3]) ?>
         <div class="form-group">
-            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+            <?= Html::submitButton('提交', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
         </div>
         <?php ActiveForm::end(); ?>
     </div>
