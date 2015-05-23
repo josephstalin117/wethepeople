@@ -22,7 +22,7 @@ class UserController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete','activate','role'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'activate', 'role'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -129,22 +129,24 @@ class UserController extends Controller
         return $this->redirect(['index']);
     }
 
-    public function actionActivate($id){
-        $model=$this->findModel($id);
-        $model->status==10?$model->status=0:$model->status=10;
-        if($model->update()){
+    public function actionActivate($id)
+    {
+        $model = $this->findModel($id);
+        $model->status == 10 ? $model->status = 0 : $model->status = 10;
+        if ($model->update()) {
             return $this->redirect(['view', 'id' => $model->id]);
-        }else{
+        } else {
             return $this->redirect(['view', 'id' => $model->id]);
         }
     }
 
-    public function actionRole($id){
-        $model=$this->findModel($id);
-        $model->role==User::ROLE_ADMIN?$model->role=User::ROLE_STUDENT:$model->role=User::ROLE_ADMIN;
-        if($model->update()){
+    public function actionRole($id)
+    {
+        $model = $this->findModel($id);
+        $model->role == User::ROLE_ADMIN ? $model->role = User::ROLE_STUDENT : $model->role = User::ROLE_ADMIN;
+        if ($model->update()) {
             return $this->redirect(['view', 'id' => $model->id]);
-        }else{
+        } else {
             return $this->redirect(['view', 'id' => $model->id]);
         }
     }
