@@ -85,10 +85,8 @@ class SuggestionController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->submitter = Yii::$app->user->id;
             if ($model->save()) {
-                Yii::$app->getSession()->setFlash('success', '创建成功');
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
-                Yii::$app->getSession()->setFlash('error', '创建失败');
                 return $this->render('create', [
                     'model' => $model,
                 ]);
@@ -123,11 +121,9 @@ class SuggestionController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->submitter = Yii::$app->user->id;
             if ($model->save()) {
-                Yii::$app->getSession()->setFlash('success', '更新成功');
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
                 error_log(print_r($model->errors, true));
-                Yii::$app->session->setFlash('error', '更新失败');
                 return $this->render('update', ['model' => $model,]);
             }
         } else {
