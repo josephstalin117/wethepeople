@@ -8,7 +8,7 @@ use yii\widgets\ListView;
 /* @var $model common\models\Suggestion */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Suggestions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '提议'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="suggestion-view">
