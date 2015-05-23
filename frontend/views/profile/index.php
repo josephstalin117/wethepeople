@@ -20,7 +20,8 @@ Yii::setAlias('@facePathRoot', Yii::$app->basePath . '/web/upload/');
 
     <p>
         <?= Html::a(Yii::t('app', '更新'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', '上传头像'), ['upload-face'], ['class' => 'btn btn-danger',]) ?>
+        <?= Html::a(Yii::t('app', '上传头像'), ['upload-face'], ['class' => 'btn btn-primary',]) ?>
+        <?= Html::a(Yii::t('app', '修改密码'), ['reset-password'], ['class' => 'btn btn-danger',]) ?>
     </p>
 
     <?= DetailView::widget([
@@ -31,7 +32,7 @@ Yii::setAlias('@facePathRoot', Yii::$app->basePath . '/web/upload/');
             [
                 'label' => '头像',
                 'value' => $model->image,
-                'format' => ['image',['width'=>'100','height'=>'100']],
+                'format' => ['image', ['width' => '100', 'height' => '100']],
             ],
             [
                 'label' => '个人介绍',

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use frontend\models\ResetPasswordForm;
 use Yii;
 use common\models\User;
 use common\models\UploadForm;
@@ -21,7 +22,7 @@ class ProfileController extends \yii\web\Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'update', 'upload-face'],
+                        'actions' => ['index', 'update', 'upload-face','reset-password'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -111,5 +112,16 @@ class ProfileController extends \yii\web\Controller
         return $this->render('upload-face', ['model' => $model]);
     }
 
+    public function actionResetPassword()
+    {
+        $model = new ResetPasswordForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+            Yii::$app->getSession()->setFlash('success', '密码修改成功');
+            return $this->goHome();
+        }
+
+        return $this->render('resetPassword', ['model' => $model,]);
+    }
 
 }
