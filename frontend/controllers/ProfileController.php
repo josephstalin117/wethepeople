@@ -22,7 +22,7 @@ class ProfileController extends \yii\web\Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'update', 'upload-face','reset-password'],
+                        'actions' => ['index', 'update', 'upload-face', 'reset-password'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -102,8 +102,11 @@ class ProfileController extends \yii\web\Controller
                     if ($user->save()) {
                         return $this->redirect('index');
                     } else {
+                        error_log($user->errors);
                         $uploadFile->delete();
                     }
+                } else {
+                    error_log($uploadFile->errors);
                 }
 
             }
