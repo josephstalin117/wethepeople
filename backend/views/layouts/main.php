@@ -63,8 +63,8 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; fengfeng Company <?= date('Y') ?></p>
-        <p class="pull-right"><?= "Powered By fengfeng" ?></p>
+        <p class="pull-left">&copy; 山商信息之家 <?= date('Y') ?></p>
+        <p class="pull-right"><?= "Powered By 山商信息之家" ?></p>
         </div>
     </footer>
 
