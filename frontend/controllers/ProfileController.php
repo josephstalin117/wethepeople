@@ -102,11 +102,11 @@ class ProfileController extends \yii\web\Controller
                     if ($user->save()) {
                         return $this->redirect('index');
                     } else {
-                        error_log($user->errors);
+                        error_log(print_r($user->errors, true));
                         $uploadFile->delete();
                     }
                 } else {
-                    error_log($uploadFile->errors);
+                    error_log(print_r($uploadFile->errors, true));
                 }
 
             }
