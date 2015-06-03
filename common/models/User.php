@@ -78,7 +78,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'username' => Yii::t('app', '用户名'),
+            'username' => Yii::t('app', '学号'),
             'password_hash' => Yii::t('app', '密码'),
             'email' => Yii::t('app', 'email'),
             'status' => Yii::t('app', '状态'),

@@ -9,7 +9,7 @@ use yii\widgets\ListView;
 /* @var $model common\models\Suggestion */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '提议'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '建议'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="suggestion-view">
@@ -19,13 +19,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('app', '同意'), ['up', 'id' => $model->id], ['class' => 'btn btn-primary',
             'data' => [
-                'confirm' => Yii::t('app', '你确定要赞同此提议吗？'),
+                'confirm' => Yii::t('app', '你确定要赞同此建议吗？'),
                 'method' => 'post',
             ],]) ?>
         <?= Html::a(Yii::t('app', '反对'), ['down', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('app', '你确定要反对此提议吗？'),
+                'confirm' => Yii::t('app', '你确定要反对此建议吗？'),
                 'method' => 'post',
             ],
         ]) ?>
@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
         <?= $form->field($comment, 'content')->textArea(['rows' => 3]) ?>
         <div class="form-group">
-            <?= Html::submitButton('提交', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+            <?= Html::submitButton('建议', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
         </div>
         <?php ActiveForm::end(); ?>
     </div>

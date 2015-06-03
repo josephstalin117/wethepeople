@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model common\models\User */
 
 $this->title = Yii::t('app', '创建用户');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Users'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '用户创建'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-create">
