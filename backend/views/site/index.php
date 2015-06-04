@@ -7,9 +7,9 @@ $this->title = '网络提议平台';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>管理后台</h1>
+        <h1>建议平台管理后台</h1>
 
-        <p class="lead">通过提议平台能够更好地认识学生1</p>
+        <p class="lead">通过建议平台能够更好地认识学生</p>
 
         <p><?= Html::a('管理公告', ['post/index'], ['class' => 'btn btn-lg btn-success']) ?></p>
 
