@@ -67,6 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <thead>
         <tr>
             <th><?= Yii::t('app', '学号'); ?></th>
+            <th><?= Yii::t('app', '姓名'); ?></th>
             <th><?= Yii::t('app', '评论内容'); ?></th>
             <th><?= Yii::t('app', '评论时间'); ?></th>
             <th></th>
