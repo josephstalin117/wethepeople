@@ -36,6 +36,7 @@ AppAsset::register($this);
                 ['label' => '主页', 'url' => ['/site/index']],
                 ['label' => '建议', 'url' => ['/suggestion/index']],
                 ['label' => '公告', 'url' => ['/site/post']],
+                ['label' => '私信', 'url' => ['/message/']],
 //                ['label' => '关于', 'url' => ['/site/about']],
                 ['label'=>'个人中心','url'=>['/profile/index']],
             ];
