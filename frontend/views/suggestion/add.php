@@ -20,7 +20,7 @@ use yii\captcha\Captcha;
             <?= $form->field($model, 'title') ?>
             <?= $form->field($model, 'content')->textArea(['rows' => 6]) ?>
             <div class="form-group">
-                <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                <?= Html::submitButton('提交', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
             </div>
             <?php ActiveForm::end(); ?>
         </div>
