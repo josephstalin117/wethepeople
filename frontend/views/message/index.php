@@ -27,12 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'send_id',
-            'recive_id',
-//            [
-//                'attribute' => 'recive_id.user.realname',
-//                'value' => 'recive_id.user.realname',
-//            ],
+//            'reciveUser.realname',
+//            'sendUser.realname',
+            [
+                'attribute'=>'sendUser.realname',
+                'label'=>'发送者',
+            ],
+            [
+                'attribute'=>'reciveUser.realname',
+                'label'=>'接受者',
+            ],
             'content',
             [
                 'attribute' => 'created_at',

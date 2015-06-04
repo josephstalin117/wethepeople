@@ -76,7 +76,12 @@ class Message extends \yii\db\ActiveRecord
         }
     }
 
-    public function getUser()
+    public function getSendUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'send_id']);
+    }
+
+    public function getReciveUser()
     {
         return $this->hasOne(User::className(), ['id' => 'recive_id']);
     }
