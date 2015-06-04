@@ -55,7 +55,8 @@ class LoginForm extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'username' => Yii::t('app', 'Username'),
+            'username' => Yii::t('app', '学号'),
+            'password' => Yii::t('app', '密码'),
             'auth_key' => Yii::t('app', 'Auth Key'),
             'password_hash' => Yii::t('app', 'Password Hash'),
             'password_reset_token' => Yii::t('app', 'Password Reset Token'),

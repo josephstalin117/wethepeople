@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'username') ?>
                 <?= $form->field($model, 'password')->passwordInput() ?>
                 <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('登陆', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
             <?php ActiveForm::end(); ?>
         </div>

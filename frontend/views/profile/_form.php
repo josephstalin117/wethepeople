@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
         'id' => 'update-form',
     ]); ?>
 
-    <?= $form->field($model, 'username')->textInput(['maxlength' => 255]) ?>
+<!--    --><?//= $form->field($model, 'username')->textInput(['maxlength' => 255]) ?>
     <?= $form->field($model, 'realname')->textInput(['maxlength' => 255]) ?>
     <?= $form->field($model, 'bio')->textInput(['maxlength' => 255]) ?>
 

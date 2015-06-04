@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', '上传头衔'), 'url
 
     <?= $form->field($model, 'file')->fileInput() ?>
 
-    <button>Submit</button>
+    <button>上传</button>
 
     <?php ActiveForm::end() ?>
 </div>

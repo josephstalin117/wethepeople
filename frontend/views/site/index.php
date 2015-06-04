@@ -13,7 +13,6 @@ $this->title = 'My Yii Application';
 
     <div class="body-content">
 
-
-
+啦啦啦
     </div>
 </div>

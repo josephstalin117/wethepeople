@@ -38,7 +38,7 @@ AppAsset::register($this);
                 ['label' => '建议管理', 'url' => ['/suggestion/index']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                $menuItems[] = ['label' => '登陆', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = [
                     'label' => '登出 (' . Yii::$app->user->identity->username . ')',
