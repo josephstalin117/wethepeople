@@ -2,7 +2,7 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '上传头衔'), 'url' => ['uploadFace']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '上传头像'), 'url' => ['uploadFace']];
 ?>
 <div class="posts-view">
 

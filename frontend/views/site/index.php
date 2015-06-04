@@ -5,7 +5,7 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>建议平台</h1>
+        <h1>学生建议平台</h1>
         <p class="lead">通过提交建议使我们做的更好</p>
 
         <p><a class="btn btn-lg btn-success" href="/suggestion/index">欢迎使用</a></p>
@@ -13,6 +13,6 @@ $this->title = 'My Yii Application';
 
     <div class="body-content">
 
-啦啦啦
+
     </div>
 </div>
