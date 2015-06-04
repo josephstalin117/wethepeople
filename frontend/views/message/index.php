@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'send_id',
             'recive_id',
 //            [
-//                'attribute' => 'recive_id',
+//                'attribute' => 'recive_id.user.realname',
 //                'value' => 'recive_id.user.realname',
 //            ],
             'content',

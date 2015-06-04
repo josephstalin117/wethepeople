@@ -64,7 +64,7 @@ class Message extends \yii\db\ActiveRecord
             'send_id' => Yii::t('app', '发送人id'),
             'recive_id' => Yii::t('app', '接受人id'),
             'un_read' => Yii::t('app', '是否'),
-            'content' => Yii::t('app', 'Content'),
+            'content' => Yii::t('app', '内容'),
             'created_at' => Yii::t('app', 'Created At'),
         ];
     }

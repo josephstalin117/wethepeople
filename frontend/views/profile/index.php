@@ -27,6 +27,7 @@ Yii::setAlias('@facePathRoot', Yii::$app->basePath . '/web/upload/');
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
+            'id',
             'username',
             'realname',
             [
