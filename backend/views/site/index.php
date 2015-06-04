@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 
-$this->title = 'My Yii Application';
+$this->title = '网络提议平台';
 ?>
 <div class="site-index">
 
