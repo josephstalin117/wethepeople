@@ -11,6 +11,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
+use common\models\User;
 
 /**
  * SuggestionController implements the CRUD actions for Suggestion model.
